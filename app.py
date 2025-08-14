@@ -170,7 +170,7 @@ def catch_all(path):
     # Create a dictionary for the current request
     current_request_data = {
         'timestamp': now,
-        'ip': request.remote_addr,
+        'ip': request.headers.get('X-Forwarded-For', request.remote_addr),
         'user_agent': request.headers.get('User-Agent', 'N/A'),
         'method': request.method,
         'path': f"/{path}",
