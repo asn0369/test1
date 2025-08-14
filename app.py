@@ -1,5 +1,6 @@
 import datetime
-from flask import Flask, request, render_template_string, Markup
+from flask import Flask, request, render_template_string
+from markupsafe import Markup
 
 # Initialize the Flask application
 app = Flask(__name__)
